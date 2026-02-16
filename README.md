@@ -39,17 +39,13 @@ npm run build
 npm run start
 ```
 
-### Environment (optional)
-
-- `NEXT_PUBLIC_APP_URL` — Full public URL (e.g. `https://your-app.vercel.app`) for canonical URLs, sitemap, and Open Graph. On Vercel, `VERCEL_URL` is used if this is not set.
-
 ## Data and credits
 
 - PSR list: LROC PSR Atlas (Lunar Reconnaissance Orbiter)
 - 3D Moon model: NASA SVS (LRO)
 - Imagery: Unsplash (free to use)
 
-This app is for educational and planning purposes. Not affiliated with NASA or SpaceX.
+This app is for educational and planning purposes.
 
 ## License
 
