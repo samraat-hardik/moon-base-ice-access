@@ -74,3 +74,32 @@ body {
   transform: translateY(-2px);
   box-shadow: 0 8px 24px rgba(0, 0, 0, 0.3);
 }
+
+/* Score ring for ice access (0-100) */
+.score-ring {
+  --score: 0;
+  --ring-size: 72px;
+  --ring-thickness: 6px;
+  width: var(--ring-size);
+  height: var(--ring-size);
+  border-radius: 50%;
+  background: conic-gradient(
+    var(--score-color, #22c55e) calc(var(--score) * 3.6deg),
+    rgba(255, 255, 255, 0.1) 0
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.score-ring-inner {
+  width: calc(var(--ring-size) - var(--ring-thickness) * 2);
+  height: calc(var(--ring-size) - var(--ring-thickness) * 2);
+  border-radius: 50%;
+  background: var(--lunar-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 1.25rem;
+}

@@ -102,7 +102,7 @@ export function SouthPoleMap({
   }, []);
 
   return (
-    <div className="relative rounded-xl overflow-hidden bg-lunar-surface border border-white/10">
+    <div className="relative w-full h-full rounded-xl overflow-hidden bg-lunar-surface">
       <svg
         width="100%"
         height="100%"
@@ -165,22 +165,30 @@ export function SouthPoleMap({
             <circle
               cx={selectedXY.x}
               cy={selectedXY.y}
-              r={8}
+              r={10}
+              fill="rgba(34,197,94,0.2)"
+              stroke="rgba(34,197,94,0.6)"
+              strokeWidth={1.5}
+            />
+            <circle
+              cx={selectedXY.x}
+              cy={selectedXY.y}
+              r={6}
               fill="rgba(34,197,94,0.4)"
               stroke="#22c55e"
               strokeWidth={2}
             />
-            <circle cx={selectedXY.x} cy={selectedXY.y} r={3} fill="#22c55e" />
+            <circle cx={selectedXY.x} cy={selectedXY.y} r={2.5} fill="#22c55e" />
           </g>
         )}
       </svg>
-      <div className="absolute bottom-2 left-2 text-xs text-white/60">
-        Click map to place base site · Amber = ice-priority PSRs · Violet = PSR · Yellow dashed = Artemis III
+      <div className="absolute bottom-2 left-2 right-2 text-xs text-white/50 bg-black/40 backdrop-blur-sm px-2 py-1.5 rounded-lg">
+        Click map to place base site · Amber = ice-priority · Violet = PSR · Yellow dashed = Artemis III
       </div>
       {hoverPsr && (
-        <div className="absolute top-2 left-2 bg-black/80 text-white text-xs px-2 py-1 rounded">
-          {hoverPsr.name || hoverPsr.id} · {hoverPsr.areaKm2.toFixed(0)} km²
-          {hoverPsr.icePriority ? " · Ice priority" : ""}
+        <div className="absolute top-2 left-2 bg-lunar-surface/95 border border-white/20 text-white text-xs px-3 py-2 rounded-lg shadow-lg backdrop-blur-sm">
+          <p className="font-medium">{hoverPsr.name || hoverPsr.id}</p>
+          <p className="text-white/70 mt-0.5">{hoverPsr.areaKm2.toFixed(0)} km²{hoverPsr.icePriority ? " · Ice priority" : ""}</p>
         </div>
       )}
     </div>

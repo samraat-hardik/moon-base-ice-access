@@ -114,7 +114,7 @@ export function MoonGlobeScene({
       className={
         fullScreen
           ? "fixed inset-0 z-40 bg-lunar-shadow"
-          : "w-full h-full min-h-[70vh] rounded-xl overflow-hidden bg-lunar-surface border border-white/10"
+          : "w-full h-[70vh] min-h-[400px] rounded-xl overflow-hidden bg-lunar-surface border border-white/10"
       }
     >
       <Canvas
